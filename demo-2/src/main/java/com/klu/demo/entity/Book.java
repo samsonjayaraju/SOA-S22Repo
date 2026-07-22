@@ -1,0 +1,62 @@
+package com.klu.demo.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Books")
+public class Book {
+	
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int BookID;
+	private String title;
+	private String author;
+	private String isbNo;
+	public int getBookID() {
+		return BookID;
+	}
+	public void setBookID(int bookID) {
+		BookID = bookID;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getIsbNo() {
+		return isbNo;
+	}
+	public void setIsbNo(String isbNo) {
+		this.isbNo = isbNo;
+	}
+	public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Book(int bookID, String title, String author, String isbNo) {
+		super();
+		BookID = bookID;
+		this.title = title;
+		this.author = author;
+		this.isbNo = isbNo;
+	}
+	@Override
+	public String toString() {
+		return "Book [BookID=" + BookID + ", title=" + title + ", author=" + author + ", isbNo=" + isbNo + "]";
+	}
+	
+	
+}
